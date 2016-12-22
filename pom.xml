@@ -74,6 +74,7 @@
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
     <maven-assembly-plugin.version>2.5.5</maven-assembly-plugin.version>
+    <jetty.version>9.3.6.v20151106</jetty.version>
   </properties>
   <build>
     <plugins>
@@ -130,7 +131,19 @@
           </descriptorRefs>
         </configuration>
       </plugin>
-      
+
+      <!-- jetty debug -->
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty.version}</version>
+        <configuration>
+          <httpConnector>
+            <port>8080</port>
+          </httpConnector>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
   <dependencies>
